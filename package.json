@@ -1,12 +1,12 @@
 {
   "name": "webpack-1",
   "version": "1.0.0",
-  "description": "\"# webpack-config\"  initgit add README.mdgit commit -m \"first commit\"git branch -M Ravindra-Dhadavegit remote add origin https://github.com/ravi8555/webpack-config.gitgit push -u origin Ravindra-Dhadave\r \"# webpack-config\"  initgit add README.mdgit commit -m \"first commit\"git branch -M Ravindra-Dhadavegit remote add origin https://github.com/ravi8555/webpack-config.gitgit push -u origin Ravindra-Dhadave run",
+  "description": "Dinesh Thakur Book Pages",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "dev": "webpack serve"
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +32,10 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "jquery": "^3.6.1",
-    "normalize-scss": "^7.0.1"
+    "jquery-scrolla": "^0.0.3",
+    "lozad": "^1.16.0",
+    "normalize-scss": "^7.0.1",
+    "normalize.css": "^8.0.1",
+    "owl.carousel": "^2.3.4"
   }
 }

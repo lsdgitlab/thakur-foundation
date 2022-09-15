@@ -68,4 +68,9 @@ $breakpoints: (
 /// @type String
 /// @example scss - When using a CDN
 ///   $base-url: 'https://cdn.example.com/assets/';
-$base-url: '/assets/' !default;
+$base-url: '/img' !default;
+// ============================
+// custome
+// ============================
+$white: #ffffff;
+$base: 0.3rem;

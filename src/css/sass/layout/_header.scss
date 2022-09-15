@@ -1,3 +1,60 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+header {
+  background-color: $white;
+  filter: drop-shadow(0 0 4.5px rgba(0, 17, 45, 0.08));
+  box-shadow: 0 0 4.5px rgba(0, 17, 45, 0.08);
+  padding: 12px 0;
+  .di-flex {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    width: 24%;
+    .logo-title {
+      font-size: 30px;
+      line-height: 30px;
+      color: #0a0200;
+      font-weight: 600;
+      font-family: "Poppins";
+      display: block;
+    }
+    small {
+      font-size: 12px;
+      line-height: 12px;
+      color: #0a0200;
+      font-weight: 400;
+      font-family: "Poppins";
+      display: block;
+
+    }
+  }
+  nav {
+    ul {
+      list-style: none;
+      li {
+        a {
+          font-size: 16px;
+          line-height: 43px;
+          color: #0a0200;
+          font-weight: 400;
+          margin: 0 20px;
+          display: block;
+          &.active {
+            border-bottom: 2px solid #da0559;
+          }
+          &.mobile {
+            background-color: #da0559;
+            color: $white;
+            padding: 0 16px;
+          }
+        }
+      }
+    }
+  }
+}
+ul ~ li {
+  background-color: yellow;
+}
+

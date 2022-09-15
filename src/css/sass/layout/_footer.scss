@@ -1,3 +1,47 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+footer{
+  background-color: #424851;
+  border-top: 6px solid #da0559;
+  padding: 46px;
+  .text{
+    font-size: 18px;
+    line-height: 24px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Poppins";
+    text-align: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    &::after{
+      content: " ";
+      max-width: 754px;
+      height: 1px;
+      background-color: #ffffff52;
+      display: block;
+      
+    }
+    p{
+      margin-bottom: 8px;
+    }
+    a{
+      font-size: 18px;
+      line-height: 24px;
+      color: #ffffff;
+      font-family: "Poppins";
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+  .copy-text{
+    font-size: 14px;
+    line-height: 55px;
+    color: #efffff;
+    font-family: open-sans, sans-serif;
+    font-weight: 300;
+    text-align: center;
+
+  }
+}

@@ -6,8 +6,8 @@ const CopyPlugin = require("copy-webpack-plugin");
 const webpack = require("webpack");
 const devMode = process.env.NODE_ENV !== "production";
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-console.log("devMode")
-console.log(devMode)
+// console.log("devMode")
+// console.log(devMode)
 
 module.exports = {
     mode: "development",
@@ -79,7 +79,7 @@ module.exports = {
                 test: /\.(svg|png|jpg|webp|ico|jpeg)$/,             
                 loader:'file-loader',
                 options:{
-                    name: '[name][ext]',
+                    name: '[name].[ext]',
                     outputPath :'./img/'
                 }
             },
@@ -110,9 +110,9 @@ module.exports = {
         }),
         
        new HtmlWebpackPlugin({
-        title: "Progress",
-        filename: "progress-steps.html",
-        template: path.resolve(__dirname, 'src/progress-steps.html')
+            title: "Progress",
+            filename: "progress-steps.html",
+            template: path.resolve(__dirname, 'src/progress-steps.html')
        }),
     //    {
     //     filename: "../../[name].css"
@@ -120,18 +120,26 @@ module.exports = {
        new MiniCssExtractPlugin({
         // Options similar to the same options in webpackOptions.output
         // both options are optional
-        filename: devMode ? "[name].css" : "./css/scss/[name].[contenthash].css",
+        // filename: devMode ? "[name].css" : "./css/scss/[name].[contenthash].css",
+        filename: devMode ? "./css/scss/[name].[contenthash].css" : "[name].css",
         // chunkFilename: devMode ? "[id].css" : "[id].[contenthash].css",
       }),
-       new HtmlWebpackPartialsPlugin({
-        path:path.join(__dirname,'./src/nav.html'),
-        location:'nav',
-        // template: path.resolve(__dirname, 'src/index.html')
-        template_filename: ['index.html', 'progress-steps.html']
-       }),
+        new HtmlWebpackPartialsPlugin({
+            path:path.join(__dirname,'./src/header.html'),
+            location:'header',
+            // template: path.resolve(__dirname, 'src/index.html')
+            template_filename: ['index.html', 'progress-steps.html']
+        }),
+        new HtmlWebpackPartialsPlugin({
+            path:path.join(__dirname,'./src/footer.html'),
+            location:'footer',
+            // template: path.resolve(__dirname, 'src/index.html')
+            template_filename: ['index.html', 'progress-steps.html']
+        }),
        new webpack.ProvidePlugin({
             $: "jquery",
-            jQuery: "jquery"
+            jQuery: "jquery",
+            'window.jQuery': 'jquery'
         }),
        // copy asset of dist
         new CopyPlugin({

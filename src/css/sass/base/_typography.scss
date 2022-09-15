@@ -5,3 +5,18 @@ body {
   color: $text-color;
   font: normal 125% / 1.4 $text-font-stack;
 }
+a{
+  text-decoration: none;
+}
+.di-flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+img{
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+p{
+  margin: 0;
+}
