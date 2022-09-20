@@ -1,0 +1,15 @@
+"# webpack-config"  initgit add README.mdgit commit -m "first commit"git branch -M Ravindra-Dhadavegit remote add origin https://github.com/ravi8555/webpack-config.gitgit push -u origin Ravindra-Dhadave
+"# webpack-config"  initgit add README.mdgit commit -m "first commit"git branch -M Ravindra-Dhadavegit remote add origin https://github.com/ravi8555/webpack-config.gitgit push -u origin Ravindra-Dhadave run
+
+    …or create a new repository on the command line
+echo "# LeetCode" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M Ravindra-Dhadave
+git remote add origin https://github.com/ravi8555/LeetCode.git
+git push -u origin Ravindra-Dhadave
+…or push an existing repository from the command line
+git remote add origin https://github.com/ravi8555/LeetCode.git
+git branch -M Ravindra-Dhadave
+git push -u origin Ravindra-Dhadave
