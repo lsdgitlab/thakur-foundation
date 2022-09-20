@@ -6,7 +6,7 @@ header {
   filter: drop-shadow(0 0 4.5px rgba(0, 17, 45, 0.08));
   box-shadow: 0 0 4.5px rgba(0, 17, 45, 0.08);
   padding: 12px 0;
-  .di-flex {
+  .nav {
     justify-content: space-between;
     align-items: center;
   }
@@ -53,8 +53,16 @@ header {
       }
     }
   }
+  .call-btn{
+    display: block;
+    font-size: 16px;
+    line-height: 43px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Poppins";
+    background-color: #c91346;
+    border-radius: 25px;
+    text-align: center;
+    width: 140px;
+  }
 }
-ul ~ li {
-  background-color: yellow;
-}
-

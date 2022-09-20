@@ -1,5 +1,5 @@
 // import style from '../sass/main.scss';
-// import $ from "jquery";
+import $ from "jquery";
 // var $ = require( "jquery" );
 import 'normalize.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
@@ -7,7 +7,7 @@ import 'owl.carousel';
 import  '../css/sass/index.scss';
 import lozad from 'lozad'
 
-import main from "./main";
+import {gotoId, main} from "./main";
 
 const observer = lozad(); // lazy loads elements with default selector as '.lozad'
 observer.observe();
@@ -18,9 +18,42 @@ observer.observe();
 // Progress
 // import progrssStep from "../js/progress-steps.js";
 
-console.log("in app");
-console.log(main())
 
+$('.gotoSection').on( "click", function(){
+  let id = $(this).data("to-section");
+  gotoId(id)
+})
+$(function () {
+  $(".info-box p").slice(0, 2).show();
+  $(".readMore").on('click', function (e) {
+      e.preventDefault();
+      $(".info-box p:hidden").slice(0, 4).slideDown();
+      if ($(".info-box p:hidden").length == 0) {
+        // $("#load").fadeOut('slow');
+        $(this).hide()
+      }
+      // console.log($(this))
+      // $(this).hide()
+      // $('html,body').animate({
+      //     scrollTop: $(this).offset().top
+      // }, 1500);
+  });
+});
+
+$('#scrollToTop').on('click', function () {
+  $('body,html').animate({
+      scrollTop: 0,
+      duration:10000,
+  }, 600);
+  return false;
+});
+$(window).on('scroll',function () {
+  if ($(this).scrollTop() > 400) {
+      $('#scrollToTop').fadeIn();
+  } else {
+      $('#scrollToTop').fadeOut();
+  }
+});
 
 if ($('#bannerCarousel').length) {
   let bannerCarousel = $("#bannerCarousel").owlCarousel({
@@ -28,22 +61,10 @@ if ($('#bannerCarousel').length) {
     items: 1,
     dots:false,
     nav:true,
-    // navText: ["", $('.newsright')],
-    // autoHeight:true,
-    // autoplay: true,
+    navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
     autoplayTimeout: 5000,
     loop:true,
     smartSpeed: 2000,
-    // responsive:{
-    //   0:{
-    //       items:1,
-    //       // nav:true
-    //   },
-    //   992:{
-    //     items:3,
-    //     // nav:true
-    //   },
-    // }
   })
 };
 if ($('#articlesCarousel').length) {
@@ -52,44 +73,9 @@ if ($('#articlesCarousel').length) {
     items: 4,
     dots:false,
     nav:true,
-    // navText: ["", $('.newsright')],
-    // autoHeight:true,
-    // autoplay: true,
+    navText: ["<img src='./../img/arrow.svg'>","<img src='./../img/arrow.svg'>"],
     autoplayTimeout: 5000,
     loop:true,
     smartSpeed: 2000,
-    // responsive:{
-    //   0:{
-    //       items:1,
-    //       // nav:true
-    //   },
-    //   992:{
-    //     items:3,
-    //     // nav:true
-    //   },
-    // }
   })
 };
-// let gotoId = (id)=>{
-//   let heightOfNav = 0;
-//   if($('.acc-header').length){
-//     heightOfNav = $('.acc-header').outerHeight(true);
-//   }
-//   console.log(heightOfNav)
-//   if($("#"+id).length === 1)
-//     $([document.documentElement, document.body]).animate({
-//         scrollTop: $("#"+id).offset().top - heightOfNav,
-//     }, 1000);
-// };
-
-// function gotoId(id:string) {
-//   var heightOfNav:number = 0;
-//   if($('.acc-header').length){
-//     heightOfNav = $('.acc-header').outerHeight(true);
-//   }
-//   console.log(heightOfNav)
-//   if($("#"+id).length === 1)
-//     $([document.documentElement, document.body]).animate({
-//         scrollTop: $("#"+id).offset().top - heightOfNav,
-//     }, 1000);
-// }

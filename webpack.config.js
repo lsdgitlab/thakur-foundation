@@ -8,7 +8,28 @@ const devMode = process.env.NODE_ENV !== "production";
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // console.log("devMode")
 // console.log(devMode)
+const htmlPageNames = [
+    {
+        pageName: 'index.html',
+        title:'Dinesh Takur'
+    }, 
+    {
+        pageName: 'biography.html',
+        title:'Biography'
+    }
+];
 
+let multipleHtmlPlugins = htmlPageNames.map(name => {
+    console.log("name=====name ")
+    console.log(name)
+    return new HtmlWebpackPlugin({
+        // template: `./src/${name}.html`,
+        filename: `${name.pageName}.html`, 
+        // chunks: [`${name.pageName}`],
+        title: name.title,
+        template: path.resolve(__dirname, `src/${name.pageName}.html`)
+    })
+});
 module.exports = {
     mode: "development",
     entry:{
@@ -75,14 +96,14 @@ module.exports = {
                 // }  
             },
             //images
-            {
-                test: /\.(svg|png|jpg|webp|ico|jpeg)$/,             
-                loader:'file-loader',
-                options:{
-                    name: '[name].[ext]',
-                    outputPath :'./img/'
-                }
-            },
+            // {
+            //     test: /\.(svg|png|jpg|webp|ico|jpeg)$/,             
+            //     loader:'file-loader',
+            //     options:{
+            //         name: '[name].[ext]',
+            //         outputPath :'./img/'
+            //     }
+            // },
             // js babel
             {   
                 test: /\.m?js$/,
@@ -101,8 +122,14 @@ module.exports = {
             
         ]
     },
+   
     //  // Plugins
     plugins:[
+        // new HtmlWebpackPlugin({
+        //     template: path.resolve(__dirname, 'src/index.html'),
+        //     chunks: ['main']
+        // }),
+        // ...multipleHtmlPlugins,
         new HtmlWebpackPlugin({
             title: "Blog",
             filename: "index.html",
@@ -111,8 +138,8 @@ module.exports = {
         
        new HtmlWebpackPlugin({
             title: "Progress",
-            filename: "progress-steps.html",
-            template: path.resolve(__dirname, 'src/progress-steps.html')
+            filename: "biography.html",
+            template: path.resolve(__dirname, 'src/biography.html')
        }),
     //    {
     //     filename: "../../[name].css"
@@ -128,13 +155,13 @@ module.exports = {
             path:path.join(__dirname,'./src/header.html'),
             location:'header',
             // template: path.resolve(__dirname, 'src/index.html')
-            template_filename: ['index.html', 'progress-steps.html']
+            template_filename: ['index.html', 'biography.html']
         }),
         new HtmlWebpackPartialsPlugin({
             path:path.join(__dirname,'./src/footer.html'),
             location:'footer',
             // template: path.resolve(__dirname, 'src/index.html')
-            template_filename: ['index.html', 'progress-steps.html']
+            template_filename: ['index.html', 'biography.html']
         }),
        new webpack.ProvidePlugin({
             $: "jquery",
@@ -153,5 +180,6 @@ module.exports = {
       
     //    new CleanWebpackPlugin(['dist'])
     ]
+    // .concat(multipleHtmlPlugins)
     
 }

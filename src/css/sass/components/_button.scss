@@ -1,3 +1,127 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+.gotonext-img {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  transform: translateX(-50%);
+  left: 50%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  .text{
+    font-size: 14px;
+    line-height: 43px;
+    color: #0a0200;
+    font-weight: 400;
+    font-family: "Poppins";
+  }
+  img {
+    cursor: pointer;
+  }
+  .drop-btn-container-white {
+    width: 20px;
+    height: 36px;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 1px solid #000;
+    overflow: hidden;
+    .v-line {
+      height: 50%;
+      display: flex;
+      align-items: center;
+      .line {
+        border-right: 1px solid #000;
+        width: 50%;
+        height: 6px;
+        margin-left: 1px;
+      }
+    }
+    .down-chevron-animate {
+      display: flex;
+      position: relative;
+      top: 0;
+      left: 0;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 4px;
+      .chevron {
+        position: absolute;
+        width: 6px;
+        height: 2px;
+        opacity: 0;
+        animation: move-chevron 3s ease-out infinite;
+      }
+      .chevron:first-child {
+        animation: move-chevron 3s ease-out 1s infinite;
+      }
+      .chevron:nth-child(2) {
+        animation: move-chevron 3s ease-out 2s infinite;
+      }
+      .chevron:before,
+      .chevron:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 50%;
+        background: #000;
+      }
+      .chevron:before {
+        left: 0;
+        transform: skewY(45deg);
+      }
+      .chevron:after {
+        right: 0;
+        width: 50%;
+        transform: skewY(-45deg);
+      }
+      @keyframes move-chevron {
+        25% {
+          opacity: 1;
+        }
+        33.3% {
+          opacity: 1;
+          transform: translateY($base * 2);
+        }
+        66.6% {
+          opacity: 0.5;
+          transform: translateY($base * 3);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY($base * 4.5) scale(0.5);
+        }
+      }
+    }
+  }
+}
+.read-more{
+  font-size: 16px;
+  line-height: 1;
+  color: #da0559;
+  font-weight: 600;
+  font-family: "Oswald";
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.scroll-top{
+  background-color: #35332d;
+  border: 2px solid #ffffff;
+  position: fixed;
+  width: 45px;
+  height: 45px;
+  bottom: 28px;
+  right: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

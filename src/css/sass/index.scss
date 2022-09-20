@@ -26,12 +26,10 @@
 
 // // 6. Page-specific styles
 @import
-  'pages/home';
+  'pages/home',
+  'pages/biography';
 
 // // 7. Themes
 @import
   'themes/default';
   
-h1{
-    color:red;
-}
