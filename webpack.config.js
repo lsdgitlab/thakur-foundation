@@ -18,18 +18,19 @@ const htmlPageNames = [
         title:'Biography'
     }
 ];
-
+let htmlFileName = htmlPageNames.map(htmlPage=> htmlPage.pageName);
 let multipleHtmlPlugins = htmlPageNames.map(name => {
-    console.log("name=====name ")
-    console.log(name)
     return new HtmlWebpackPlugin({
-        // template: `./src/${name}.html`,
-        filename: `${name.pageName}.html`, 
+        // template: `./src/${name.pageName}`,
+        filename: `${name.pageName}`, 
         // chunks: [`${name.pageName}`],
+        // chunks: [name.pageName.replace(/-(\w)/g, (match, c) => c.toUpperCase())],
         title: name.title,
-        template: path.resolve(__dirname, `src/${name.pageName}.html`)
+        template: path.resolve(__dirname, `src/${name.pageName}`),
     })
 });
+// console.log("==========>> multipleHtmlPlugins << =============")
+// console.log(multipleHtmlPlugins)
 module.exports = {
     mode: "development",
     entry:{
@@ -97,10 +98,12 @@ module.exports = {
             },
             //images
             // {
-            //     test: /\.(svg|png|jpg|webp|ico|jpeg)$/,             
-            //     loader:'file-loader',
+            //     test: /\.(svg|png|jpg|webp|ico|jpeg)$/,  
+            //     type: 'asset/resource',           
+            //     // loader:'file-loader',
+            //     // esModule: false,
             //     options:{
-            //         name: '[name].[ext]',
+            //         name: '[path][name].[ext]',
             //         outputPath :'./img/'
             //     }
             // },
@@ -130,17 +133,17 @@ module.exports = {
         //     chunks: ['main']
         // }),
         // ...multipleHtmlPlugins,
-        new HtmlWebpackPlugin({
-            title: "Blog",
-            filename: "index.html",
-            template: path.resolve(__dirname, 'src/index.html')
-        }),
+        // new HtmlWebpackPlugin({
+        //     title: "Blog",
+        //     filename: "index.html",
+        //     template: path.resolve(__dirname, 'src/index.html')
+        // }),
         
-       new HtmlWebpackPlugin({
-            title: "Progress",
-            filename: "biography.html",
-            template: path.resolve(__dirname, 'src/biography.html')
-       }),
+    //    new HtmlWebpackPlugin({
+    //         title: "Progress",
+    //         filename: "biography.html",
+    //         template: path.resolve(__dirname, 'src/biography.html')
+    //    }),
     //    {
     //     filename: "../../[name].css"
     // }
@@ -155,13 +158,13 @@ module.exports = {
             path:path.join(__dirname,'./src/header.html'),
             location:'header',
             // template: path.resolve(__dirname, 'src/index.html')
-            template_filename: ['index.html', 'biography.html']
+            template_filename: htmlFileName
         }),
         new HtmlWebpackPartialsPlugin({
             path:path.join(__dirname,'./src/footer.html'),
             location:'footer',
             // template: path.resolve(__dirname, 'src/index.html')
-            template_filename: ['index.html', 'biography.html']
+            template_filename: htmlFileName
         }),
        new webpack.ProvidePlugin({
             $: "jquery",
@@ -179,7 +182,7 @@ module.exports = {
           })
       
     //    new CleanWebpackPlugin(['dist'])
-    ]
-    // .concat(multipleHtmlPlugins)
+    ].concat(multipleHtmlPlugins)
+    // 
     
 }

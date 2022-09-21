@@ -1,23 +1,13 @@
-// import style from '../sass/main.scss';
 import $ from "jquery";
-// var $ = require( "jquery" );
 import 'normalize.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
 import  '../css/sass/index.scss';
 import lozad from 'lozad'
-
 import {gotoId, main} from "./main";
 
-const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+const observer = lozad();
 observer.observe();
-// import style1 from '../css/main.css';
-// import component from './component.js';
-
-
-// Progress
-// import progrssStep from "../js/progress-steps.js";
-
 
 $('.gotoSection').on( "click", function(){
   let id = $(this).data("to-section");
@@ -47,11 +37,12 @@ $('#scrollToTop').on('click', function () {
   }, 600);
   return false;
 });
+
 $(window).on('scroll',function () {
   if ($(this).scrollTop() > 400) {
-      $('#scrollToTop').fadeIn();
+    $('#scrollToTop').fadeIn();
   } else {
-      $('#scrollToTop').fadeOut();
+    $('#scrollToTop').fadeOut();
   }
 });
 
