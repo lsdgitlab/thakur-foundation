@@ -1,0 +1,269 @@
+.media-page{
+  .title-section{
+    margin: 180px 0 80px 0;
+    .title-img{
+      margin-top: 40px;
+    }
+  }
+  .link-section{
+    .link-width{
+      max-width: 980px;
+      width: 100%;
+      padding: 0;
+      margin: 0 auto 120px auto;
+      li{
+        // margin-bottom: ;
+        padding: 8px 16px;
+        a{
+          font-size: 18px;
+          line-height: 1.5;
+          color: #36332e;
+          font-weight: 400;
+          font-family: "Roboto";
+        }
+        border-bottom: 1px solid #9c8c7a;
+        list-style: none;
+        &::marker{
+          color: #c91346;
+          // display: none;
+        }
+        &::before{
+          content: " ";
+          display: inline-block;
+          background-color: #c91346;
+          width: 8px;
+          height: 8px;
+          border-radius: 4px;
+          margin-right: 24px;
+        }
+      }
+    }
+  }
+}
+.search-section{
+  margin: 40px 0 36px 0;
+  .search-box{
+    max-width: 980px;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    input[type=text] {
+      padding: 10px 40px;
+      font-size: 17px;
+      border: 1px solid grey;
+      float: left;
+      width: 80%;
+      background: #f1f1f1;
+      font-size: 14px;
+      color: #828680;
+      font-weight: 300;
+      font-style: italic;
+      font-family: "Poppins";
+      background-color: #ffffff;
+      border: 1px solid #d7d7d7;
+      height: 50px;
+    }
+    button {
+      width: 20%;
+      padding: 10px;
+      background: #2196F3;
+      color: white;
+      font-size: 17px;
+      border: 1px solid grey;
+      border-left: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      color: #ffffff;
+      font-weight: 500;
+      font-family: "Poppins";
+      background-color: #c91346;
+      border: 1px solid #d7d7d7;
+      height: 50px;
+      img{
+        margin: 0;
+        margin-left: 16px;
+      }
+    }
+    button:hover {
+      background: #0b7dda;
+    }
+  }
+}
+.accordion-section{
+  .acc-container{
+    max-width: 980px;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    margin-bottom: 120px;
+    .acc-card{
+      background-color: #ffffff;
+      box-shadow: 0 0 4.5px rgba(0,17,45,0.08);
+      padding: 20px 36px 20px 60px;
+      margin-bottom: 16px;
+      .panel {
+        // padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
+      .accordion{
+        font-size: 18px;
+        line-height: 1.5;
+        color: #000000;
+        font-weight: 600;
+        font-family: "Poppins";
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        img{
+          margin: 0;
+          // max-width: ;
+        }
+      }
+      .accordion:after {
+        // content: '\002B';
+        // color: #777;
+        // font-weight: bold;
+        // float: right;
+        // margin-left: 5px;
+        content: "";
+        width: 30px;
+        height: 30px;
+        background-image: url("./../../img/ac-ch.png") ;
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: 10px;
+        right: 5px;
+        // position: absolute;
+        display: inline-block;
+        // transform: rotate(-180deg);
+
+      }
+      .active{
+        padding: 30px 0 50px 0;
+        
+      }
+      .active:after {
+        background-image: url("./../../img/pdf-up.png") ;
+      }
+      .panel{
+        .acc-link{
+          padding: 0;
+          margin: 0;
+          margin-bottom: 60px;
+
+        }
+        li{
+          // margin-bottom: ;
+          padding: 8px 16px;
+          position: relative;
+
+          left: 0;
+          img{
+            margin: 0;
+          }
+          a{
+            font-size: 18px;
+            line-height: 1.5;
+            color: #36332e;
+            font-weight: 400;
+            font-family: "Roboto";
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 16px;
+            span{
+              display: block;
+              margin-right: 16px;
+            }
+          }
+          border-bottom: 1px solid #9c8c7a;
+          list-style: none;
+          &::marker{
+            color: #c91346;
+            // display: none;
+          }
+          &::before{
+            content: " ";
+            display: inline-block;
+            background-color: #c91346;
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+            margin-right: 24px;
+            position: absolute;
+            left: 0;
+            top: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1399.98px) {
+  
+}
+@media (max-width: 1199.98px) {}
+@media (max-width: 991.98px) {
+  .media-page .title-section .title-img {
+    margin-top: 0px;
+  }
+  .media-page .title-section {
+    margin: 60px 0 60px 0;
+  }
+  .media-page .link-section .link-width li a {
+    font-size: 14px;
+  }
+  .media-page .link-section .link-width {
+    margin: 0 auto 80px auto;
+  }
+  .search-section .search-box input[type=text] {
+    width: 70%;
+  }
+  .search-section .search-box button img {
+    margin: 0;
+    margin-left: 12px;
+  }
+  .search-section .search-box button {
+    width: 30%;
+    font-size: 13px;
+  }
+  .accordion-section .acc-container .acc-card {
+    padding: 14px 16px 14px 32px;
+  }
+  .accordion-section .acc-container .acc-card .accordion {
+    font-size: 14px;
+  }
+  .accordion-section .acc-container .acc-card .accordion:after {
+    width: 26px;
+    height: 26px;
+  }
+  .search-section {
+    margin: 0px 0 20px 0;
+  }
+  .accordion-section .acc-container .acc-card .active {
+    padding: 14px 0 24px 0;
+  }
+  .accordion-section .acc-container .acc-card .panel li::before {
+    margin-right: 8px;
+  }
+  .accordion-section .acc-container .acc-card .panel li a {
+    font-size: 12px;
+    line-height: 1.5;
+    padding-left: 4px;
+  }
+  .accordion-section .acc-container {
+    margin-bottom: 40px;
+  }
+
+}
+@media (max-width: 767.98px) {}
+@media (max-width: 575.98px) {}

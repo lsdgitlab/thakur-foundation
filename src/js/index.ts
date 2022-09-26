@@ -4,7 +4,7 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
 import  '../css/sass/index.scss';
 import lozad from 'lozad'
-import {gotoId, main} from "./main";
+import {gotoId, submitData} from "./main";
 
 const observer = lozad();
 observer.observe();
@@ -12,6 +12,10 @@ observer.observe();
 $('.gotoSection').on( "click", function(){
   let id = $(this).data("to-section");
   gotoId(id)
+})
+$('.formSumit').on( "click", function(){
+  let id = $(this).data("form-id");
+  submitData(id)
 })
 $(function () {
   $(".info-box p").slice(0, 2).show();
@@ -98,3 +102,29 @@ $(".close-menu").click(function(){
     $('.mobile-menu').removeClass('open animate__fadeOutLeft animate__fadeInLeft')
   }, 900);
 })
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+
+$(".form-control").on("keyup change", function (event) {
+  if($(this).parent().siblings('.invalid').length){
+    $(this).parent().siblings('.invalid').hide()
+    $(this).removeClass('error')
+  }
+});
+
+
+
+

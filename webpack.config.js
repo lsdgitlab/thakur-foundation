@@ -16,7 +16,19 @@ const htmlPageNames = [
     {
         pageName: 'biography.html',
         title:'Biography'
-    }
+    },
+    {
+        pageName: 'media.html',
+        title:'Media'
+    },
+    {
+        pageName: 'resources.html',
+        title:'Resources'
+    },
+    {
+        pageName: 'contact.html',
+        title:'Contact'
+    },
 ];
 let htmlFileName = htmlPageNames.map(htmlPage=> htmlPage.pageName);
 let multipleHtmlPlugins = htmlPageNames.map(name => {
