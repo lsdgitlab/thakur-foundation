@@ -141,3 +141,65 @@
     }
   }
 }
+@media (max-width: 1399.98px) {
+  
+}
+@media (max-width: 1199.98px) {}
+@media (max-width: 991.98px) {
+  .biography-page .about-section {
+    margin: 100px 0 0px 0;
+  }
+  .biography-page .about-section h1{
+    font-size: 24px;
+    line-height: 120px;
+  }
+  .biography-page .about-section .author-info {
+    margin: 24px auto;
+  }
+  .biography-page .about-section .author-info.second .img-box{
+    order: unset;
+  }
+  .biography-page .about-section .author-info .img-box{
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .biography-page .about-section .author-info .img-box .bg-box {
+    width: 300px;
+    margin: 0 auto;
+  }
+  .biography-page .about-section .author-info .info-box{
+    width: 100%;
+    padding: 0;
+    margin-bottom: 24px;
+  }
+  .biography-page .about-section .author-info .info-box p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .biography-page .book-section .book-width .info-box, .biography-page .book-section .book-width .img-box{
+    width: 100%;
+  }
+  .biography-page .book-section .book-width{
+    padding: 0;
+  }
+  .biography-page .book-section .book-width .media-list .item-content {
+    align-items: center;
+    padding-right: 16px;
+    margin: 12px 0;
+  }
+  .biography-page .book-section .book-width .media-list .item-content .item-inner .item-title {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .biography-page .book-section .book-width .media-list .item-content .item-media {
+    width: 60px;
+    height: 60px;
+    padding: 16px;
+  }
+}
+@media (max-width: 767.98px) {
+  .biography-page .book-section .book-width .media-list .item-content.width-50{
+    width: 100%;
+  }
+}
+@media (max-width: 575.98px) {}

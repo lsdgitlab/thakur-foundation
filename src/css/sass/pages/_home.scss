@@ -9,8 +9,12 @@
     left: 0;
     background-image: linear-gradient(0deg, #ffffff 0%, #fbd9df 100%);
     // height: calc(100vh - 110px);
-    .text-box, .img-box{
-      width: 50%;
+    .text-box{
+      width: 45%;
+    }
+    .img-box{
+      width: 55%;
+
     }
     .text-box{
       align-self: center;
@@ -41,7 +45,29 @@
       }
     }
     .img-box{
-      padding: 0 80px;
+      // padding: 0 80px;
+      position: relative;
+      top: 0;
+      left: 0;
+      img{
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .News03{
+        right: 0;
+        left: auto;
+        top: 80px;
+      }
+      .News02{
+        top: 140px;
+        left: -50px;
+      }
+      .News01{
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+      }
     }
   }
   .about-section{
@@ -54,6 +80,18 @@
     background-position:center;
     background-repeat: no-repeat;
     background-size: cover;
+    .off-title{
+      font-size: 80px;
+      line-height: 80px;
+      color: #dac6ad;
+      font-weight: 600;
+      font-family: "Oswald";
+      margin-top: -76px;
+      margin-left: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
     .abs-img{
       position: absolute;
       top: 0;
@@ -63,7 +101,7 @@
         z-index: 2;
       }
       &.plant{
-        left: 15%;
+        left: 280px;
         top: -60px;
       }
       &.book{
@@ -85,15 +123,9 @@
       }
     }
     .info-box{
-      padding-bottom: 60px;
-      .off-title{
-        font-size: 80px;
-        line-height: 80px;
-        color: #dac6ad;
-        font-weight: 600;
-        font-family: "Oswald";
-        margin-top: -76px;
-      }
+      padding: 60px 0;
+      position: relative;
+      
       .title{
         font-size: 30px;
         color: #000000;
@@ -242,3 +274,102 @@
     }
   }
 }
+@media (max-width:1399.98px) {}
+@media (max-width: 1199.98px) {
+  .home-page .banner-section .text-box, .home-page .banner-section .img-box{
+    width: 100%;
+  }
+  .home-page .banner-section .text-box{
+    padding-top: 0;
+  }
+  .home-page .banner-section .img-box {
+    height: 200px;
+  }
+  .home-page .banner-section .img-box img {
+    width: 300px;
+  }
+  .home-page .banner-section .img-box .News02{
+    left: 0;
+  }
+  .gotonext-img{
+    display: none;
+  }
+  .home-page .banner-section{
+    padding-top: 16px;
+  }
+  .home-page .banner-section .text-box .header-title{
+    font-size: 30px;
+  }
+  .home-page .banner-section .text-box h1{
+    font-size: 60px;
+    margin-bottom: 16px;
+  }
+  .home-page .banner-section .text-box p{
+    font-size: 16px;
+  }
+  .home-page .about-section .abs-img.type-writer{
+    display: none;
+  }
+  .home-page .about-section .off-title{
+    font-size: 36px;
+    margin-left:auto;
+    margin-right:auto;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -56px;
+  }
+  .home-page .about-section .img-box, .home-page .about-section .info-box{
+    width: 100%;
+  }
+  .home-page .about-section .img-box{
+    height: 350px;
+  }
+  .home-page .about-section .abs-img.plant {
+    left: 0px;
+    top: 60px;
+  }
+  .home-page .about-section .abs-img.book {
+    top: 90px;
+    left: 40%;
+    width: 200px;
+  }
+  // .home-page .about-section .abs-img {
+  //   width: 46%;
+  // }
+
+
+}
+
+@media (max-width: 991.98px) {}
+@media (max-width: 767.98px) {
+  .home-page .about-section .off-title{
+    font-size: 24px;
+    margin-top: -50px;
+  }
+  .home-page .about-section .abs-img.pencil {
+    left: 12%;
+    top: 200px;
+    width: 100px;
+  }
+  .home-page .about-section .info-box .title {
+    font-size: 24px;
+    margin: 0;
+  }
+  .home-page .about-section .info-box p {
+    margin-bottom: 12px;
+  }
+  .home-page .feature-acc {
+    padding: 40px 0;
+  }
+  .home-page .feature-acc .articles-carousel.owl-carousel .owl-nav {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .home-page .banner-section .img-box img {
+    width: 160px;
+  }
+  .home-page .banner-section {
+    padding: 60px 0 0 0;
+  }
+}
+@media (max-width: 575.98px) {}
