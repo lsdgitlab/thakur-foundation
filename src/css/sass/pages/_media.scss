@@ -14,6 +14,9 @@
       li{
         // margin-bottom: ;
         padding: 8px 16px;
+        position: relative;
+        top: 0;
+        left: 0;
         a{
           font-size: 18px;
           line-height: 1.5;
@@ -35,6 +38,9 @@
           height: 8px;
           border-radius: 4px;
           margin-right: 24px;
+          position: absolute;
+          left: 0;
+          top: 20px;
         }
       }
     }
@@ -66,7 +72,7 @@
     button {
       width: 20%;
       padding: 10px;
-      background: #2196F3;
+      // background: #2196F3;
       color: white;
       font-size: 17px;
       border: 1px solid grey;
@@ -87,9 +93,9 @@
         margin-left: 16px;
       }
     }
-    button:hover {
-      background: #0b7dda;
-    }
+    // button:hover {
+    //   background: #0b7dda;
+    // }
   }
 }
 .accordion-section{

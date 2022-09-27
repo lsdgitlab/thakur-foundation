@@ -45,6 +45,7 @@
           line-height: 30px;
           color: #000000;
           font-family: "Roboto";
+          font-weight: 500;
           &::first-letter {
             font-size: 200%;
           }
@@ -165,6 +166,10 @@
     width: 60px;
     height: 60px;
     padding: 16px;
+  }
+  .biography-page .title-section .author-info.second .info-box {
+    padding: 0;
+    // padding-right: 75px;
   }
 }
 @media (max-width: 767.98px) {

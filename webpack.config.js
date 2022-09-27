@@ -39,6 +39,15 @@ let multipleHtmlPlugins = htmlPageNames.map(name => {
         // chunks: [name.pageName.replace(/-(\w)/g, (match, c) => c.toUpperCase())],
         title: name.title,
         template: path.resolve(__dirname, `src/${name.pageName}`),
+
+        // collapseWhitespace: true,
+        // keepClosingSlash: true,
+        // removeComments: true,
+        // removeRedundantAttributes: false, // do not remove type="text"
+        // removeScriptTypeAttributes: true,
+        // removeStyleLinkTypeAttributes: true,
+        // useShortDoctype: true
+        minify: false
     })
 });
 // console.log("==========>> multipleHtmlPlugins << =============")

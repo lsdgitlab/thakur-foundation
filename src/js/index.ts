@@ -2,6 +2,7 @@ import $ from "jquery";
 import 'normalize.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
+import "jquery-popup-overlay";
 import  '../css/sass/index.scss';
 import lozad from 'lozad'
 import {gotoId, submitData} from "./main";
@@ -49,7 +50,7 @@ $(window).on('scroll',function () {
     $('#scrollToTop').fadeOut();
   }
 });
-
+$('#thankpop').popup();
 // if ($('#bannerCarousel').length) {
 //   let bannerCarousel = $("#bannerCarousel").owlCarousel({
 //     margin:20,
@@ -95,7 +96,7 @@ $(".toggle_icon").click(function(){
 //     $(".mobile-menu").toggleClass('open')
 //   }
 // });
-$(".close-menu").click(function(){
+$(".close-menu, .back-drop").click(function(){
   console.log("clis")
   $('.mobile-menu').addClass('animate__fadeOutLeft')
   setTimeout(() => {

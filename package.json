@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "build": "webpack --mode production",
     "dev": "webpack serve --mode development"
   },
   "keywords": [],
@@ -32,6 +32,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "jquery": "^3.6.1",
+    "jquery-popup-overlay": "^2.1.5",
     "jquery-scrolla": "^0.0.3",
     "lozad": "^1.16.0",
     "normalize-scss": "^7.0.1",

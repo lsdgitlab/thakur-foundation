@@ -10,10 +10,10 @@
     background-image: linear-gradient(0deg, #ffffff 0%, #fbd9df 100%);
     // height: calc(100vh - 110px);
     .text-box{
-      width: 45%;
+      width: 40%;
     }
     .img-box{
-      width: 55%;
+      width: 60%;
 
     }
     .text-box{
@@ -55,7 +55,7 @@
         left: 0;
       }
       .News03{
-        right: 0;
+        right: -60px;
         left: auto;
         top: 80px;
       }
@@ -86,11 +86,12 @@
       color: #dac6ad;
       font-weight: 600;
       font-family: "Oswald";
-      margin-top: -76px;
+      margin-top: -72px;
       margin-left: 50%;
       position: absolute;
       top: 0;
       left: 0;
+      z-index: -1;
     }
     .abs-img{
       position: absolute;
@@ -329,9 +330,13 @@
     top: 60px;
   }
   .home-page .about-section .abs-img.book {
-    top: 90px;
+    top: 40px;
     left: 40%;
-    width: 200px;
+    width: 280px;
+  }
+  .home-page .about-section .abs-img.pencil {
+    left: 12%;
+    top: 140px;
   }
   // .home-page .about-section .abs-img {
   //   width: 46%;
@@ -344,8 +349,8 @@
 @media (max-width: 991.98px) {}
 @media (max-width: 767.98px) {
   .home-page .about-section .off-title{
-    font-size: 24px;
-    margin-top: -50px;
+    font-size: 36px;
+    margin-top: -56px;
   }
   .home-page .about-section .abs-img.pencil {
     left: 12%;
@@ -372,5 +377,44 @@
   .home-page .banner-section {
     padding: 60px 0 0 0;
   }
+  .home-page .banner-section .img-box .News03{
+    right: 0;
+  }
+  .home-page .banner-section .img-box .News02 {
+    top: 120px;
+  }
+  .home-page .about-section {
+    margin-top: 120px;
+  }
 }
-@media (max-width: 575.98px) {}
+@media (max-width: 575.98px) {
+  .home-page .about-section .off-title {
+    font-size: 32px;
+    margin-top: -38px;
+    line-height: 1.5;
+    width: 100%;
+    text-align: center;
+  }
+  .home-page .about-section .abs-img.book {
+    left: 38%;
+    width: 200px;
+  }
+  .home-page .banner-section .img-box .News01 {
+    left: 46%;
+  }
+  .home-page .banner-section .img-box img {
+    width: 156px;
+  }
+  .home-page .banner-section .img-box .News03 {
+    right: -10px;
+  }
+  .home-page .banner-section {
+    padding: 16px 0 0 0;
+  }
+  .home-page .about-section .abs-img.plant {
+    width: 120px;
+  }
+  .home-page .about-section .info-box .title {
+    margin-bottom: 8px;
+  }
+}

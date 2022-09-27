@@ -43,6 +43,7 @@ header {
           display: block;
           &.active {
             border-bottom: 2px solid #da0559;
+            font-weight: 800;
           }
           &.mobile {
             background-color: #da0559;
@@ -87,6 +88,11 @@ header {
           &:nth-child(1){
             border-right: 1px solid #00000070;
           }
+          &:nth-child(2){
+            img{
+              width: 86px;
+            }
+          }
         }
         // &::after{
         //   content: " ";
@@ -117,7 +123,7 @@ header {
   //   display: none;
   // }
   header nav ul li a {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.5;
     margin: 0;
     margin-bottom: 8px;
@@ -129,7 +135,7 @@ header {
     padding: 40px;
   }
   header .rt-side .available--box p{
-    font-size: 10px;
+    font-size: 14px;
     margin-left: 24px;
   }
   header .rt-side .available--box .buy-online a{
@@ -156,6 +162,7 @@ header {
   }
 
 
+
   .mobile-menu {
     display: block;
     position: fixed;
@@ -163,9 +170,18 @@ header {
     left: 0;
     height: 100vh;
     width: 0;
-    background-color: #0000004f;
+    
     z-index: 110;
     overflow-x: hidden;
+    .back-drop{
+      background-color: #0000004f;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
     // width: 100%;
     &.open {
       width: 100% !important;
@@ -278,4 +294,28 @@ header {
   header .rt-side .available--box .buy-online{
     margin-right: 8px;
   }
+
+}
+@media (max-width: 399.98px) {
+  header .rt-side .available--box p {
+    margin-left: 8px;
+    margin-right: 4px;
+    font-size: 10px;
+  }
+  header .rt-side .available--box .buy-online a {
+    width: 48px;
+  }
+  header .rt-side .available--box .buy-online a {
+    padding: 0px;
+  }
+  header .call-btn {
+    line-height: 2.5;
+    line-height: 2.5;
+    font-size: 9px;
+    width: 55px;
+  }
+  .mobile-menu-btn {
+    width: 22px;
+  }
+
 }
